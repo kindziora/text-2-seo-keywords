@@ -1,0 +1,31 @@
+{
+  "name": "text-2-seo-keywords",
+  "version": "1.0.0",
+  "description": "get seo relevant keywords from a given text",
+  "main": "text2SEO.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kindziora/text-2-seo-keywords.git"
+  },
+  "keywords": [
+    "seo",
+    "keywords",
+    "rake",
+    "google",
+    "trends"
+  ],
+  "author": "Alexander Kindziora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kindziora/text-2-seo-keywords/issues"
+  },
+  "homepage": "https://github.com/kindziora/text-2-seo-keywords#readme",
+  "dependencies": {
+    "google-trends-api": "^4.9.0",
+    "https-proxy-agent": "^2.2.1",
+    "node-rake": "^1.0.1"
+  }
+}
