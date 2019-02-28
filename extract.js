@@ -4,7 +4,9 @@ module.exports = function(text, myStopwords) {
 
     const opts = {stopwords: myStopwords || []};
     
-    return rake.generate(text, opts);
+    let kwds = rake.generate(text, opts);
+ 
+    return kwds.map(e=>e.replace(/[^a-z0-9+äöüÄÖÜß]+/gi, ''));
 }
 
 
