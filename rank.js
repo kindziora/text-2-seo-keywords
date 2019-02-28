@@ -3,6 +3,7 @@ const googleTrends = require('google-trends-api');
 const HttpsProxyAgent = require('https-proxy-agent');
 const https = require('https');
 
+
 module.exports = function (keywords, success, error) {
 
     https.get('https://api.getproxylist.com/proxy', (resp) => {
@@ -22,13 +23,14 @@ module.exports = function (keywords, success, error) {
             let url = `http${proxy.allowsHttps?"s":""}://` + proxy.ip + ":" + proxy.port;
           //  console.log(url);
             //let proxyAgent = new HttpsProxyAgent(url);
-            console.log(keywords);
+             
+
             let query = {
                 keyword: keywords,
             //    agent: proxyAgent
+                geo : "DE"
             };
-
-            googleTrends.autoComplete(query).then(success).catch(error);
+             googleTrends.interestByRegion(query).then((res) => success(res, keywords) ).catch(error);
         });
 
     }).on("error", (err) => {
