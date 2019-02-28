@@ -10,4 +10,3 @@ module.exports = function (text, successCallback, stopwords) {
             console.error('Oh no there was an error, double check your proxy settings', err);
         });
 }
-

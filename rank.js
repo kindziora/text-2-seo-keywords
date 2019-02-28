@@ -24,13 +24,17 @@ module.exports = function (keywords, success, error) {
           //  console.log(url);
             //let proxyAgent = new HttpsProxyAgent(url);
              
+            var startDate = new Date();
+            startDate.setMonth(startDate.getMonth() - 1);
 
             let query = {
                 keyword: keywords,
             //    agent: proxyAgent
-                geo : "DE"
+                hl : "de",
+                startTime: startDate
+
             };
-             googleTrends.interestByRegion(query).then((res) => success(res, keywords) ).catch(error);
+             googleTrends.interestOverTime(query).then((res) => success(res, keywords) ).catch(error);
         });
 
     }).on("error", (err) => {
