@@ -6,7 +6,7 @@ module.exports = function(text, myStopwords) {
     
     let kwds = rake.generate(text, opts);
  
-    return kwds.map(e=>e.replace(/[^a-z0-9+äöüÄÖÜß]+/gi, ''));
+    return kwds.map(e=>e.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").replace(/\s{2,}/g, ' '));
 }
 
 
